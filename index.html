@@ -1,33 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Eaglercraft Launcher</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eaglercraft 1.12.2</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            height: 100vh;
+        /* reset & base */
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .box {
-            width: 200px;
-            height: 120px;
-            border: 2px solid #333;
-            border-radius: 12px;
+        body {
+            background: #1a1a2e;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
-            cursor: pointer;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .container {
+            background: #16213e;
+            padding: 1.5rem 1.5rem 1.2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            max-width: 98vw;
+        }
+
+        .embed-wrapper {
+            position: relative;
+            width: 80vw;
+            max-width: 1100px;
+            aspect-ratio: 16 / 9;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+        }
+
+        .embed-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .caption {
+            margin-top: 0.75rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            font-weight: 400;
+        }
+
+        .caption a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
+            transition: color 0.2s;
+        }
+
+        .caption a:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* fallback for very small screens */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0.75rem;
+                border-radius: 1rem;
+            }
+            .embed-wrapper {
+                width: 92vw;
+                border-radius: 0.6rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="box" onclick="location.href='/1-8-8-WSAM/'">1.8.8</div>
-    <div class="box" onclick="location.href='/1-12-2-WSAM/'">1.12.2</div>
+
+    <div class="container">
+        <div class="embed-wrapper">
+            <iframe
+            src="https://cdn.mathgames.qzz.io/eaglercraft/1-12-2-WASM.html"
+            loading="lazy"
+            allow="autoplay; fullscreen"
+            title="Eaglercraft 1.12.2"
+            ></iframe>
+        </div>
+        <div class="caption">
+            <a href="https://cdn.mathgames.qzz.io/eaglercraft/1-12-2-WASM.html" target="_blank" rel="noopener">Eaglercraft 1.12.2</a>
+            &nbsp;·&nbsp; play in browser
+        </div>
+    </div>
+
 </body>
 </html>
